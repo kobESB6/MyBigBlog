@@ -4,12 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kobum Big Blog</title>
-    <link rel="stylesheet" href="/MyBigBlog/Assets/css/styles.css">
-    <link rel="stylesheet" href="/MyBigBlog/Assets/css/from.css">
+    <link rel="stylesheet" href="/MyBigBlog/assets/css/styles.css">
+    <link rel="stylesheet" href="/MyBigBlog/assets/css/form.css">
 
-    <script src="/MyBigBlog/Assets/"
+    <script src="./Assets/js/main.js"></script>
+    <script src="./Assets/js/form.js"></script>
 </head>
 <body>
+    <header>
+        <p>Mode<p1>
+         <button id="toggle"></button> <!--This is the button that will toggle the dark mode -->
+    </header>
+    <main>
+        <h2>Kobum Blog</h2>
+        <section>
+            <h2>Speak your Mind here:</h2>
+            <form>
+                <label for="username">User:</label>
+                <input id="username" type="text" title="Enter username" placeholder="Enter Username"/>
+            
+
+                <label for title="title">Post Title:</label>
+                <input id="title" type="text" title="Post Title" placeholder="Post Title"/>
+
+                <label for="content">Post:</label>
+                <input id="content" type="text" rows="4" placeholder=" Post Your Thoughts!"/>
+
+                <p id="error">&nbsp;</p>
+                <button type="submit">Submit</button>
+                
+            </form>
+        </section>
+    </main>
     
 </body>
 </html>
