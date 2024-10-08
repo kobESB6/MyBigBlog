@@ -15,12 +15,12 @@ const handleEmpty = function () {
 
 const renderBlogList = function () {
   const blogs = readLocalStorage();
-
+  console.log('Retrieved blogs:', blogs); // Add this line
   if (!blogs.length) {
     handleEmpty();
     return;
   }
-
+  console.log('Rendering blogs'); // Add this line
   for (let blog of blogs) {
     const article = buildElement('article', null, mainEl);
     buildElement('h2', blog.title, article);
@@ -28,6 +28,6 @@ const renderBlogList = function () {
     buildElement('p', `Posted by: ${blog.username}`, article);
     article.classList.add('card');
   }
+;
+document.addEventListener('DOMContentLoaded', renderBlogList);
 };
-
-renderBlogList();

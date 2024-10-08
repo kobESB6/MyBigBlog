@@ -31,6 +31,10 @@ const handleFormSubmit = function (event) {
 const redirectPage = function () {
   location.href = './blog.html';
 };
+const readLocalStorage = function () {
+  const storedBlogs = localStorage.getItem('blogs');
+  return storedBlogs ? JSON.parse(storedBlogs) : [];
+};
 
 const storeLocalStorage = function (data) {
   const allBlogs = readLocalStorage();

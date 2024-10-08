@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="./css/styles.css"/>
     <link rel="stylesheet" href="./css/form.css"/>
 
-    <script src= "./assets/js/logic.js" type =text/javascript"></script>
-    <script src= "./assets/js/form.js" type =text/javascript"></script>
+   
+     <script defer src= "./assets/js/form.js" type =text/javascript"></script>
+     <script defer src="./assets/js/blog.js" type="text/javascript"></script>
+     <script defer src= "./assets/js/logic.js" type =text/javascript"></script>
 </head>
 <body>
     <header>
         
-         <button id="toggle"></button> <!--This is the button that will toggle the dark mode -->
+         <button class="mode" id="toggle"></button> <!--This is the button that will toggle the dark mode -->
     </header>
     <main>
         <aside>
@@ -33,7 +35,7 @@
                 <input id="content" type="text" rows="4" placeholder=" Post Your Thoughts!"/>
 
                 <p id="error">&nbsp;</p>
-                <button type="submit">Submit</button>
+                <button type="submit"><a href="./blog.html">Submit</a></button>
                 
             </form>
         </section>

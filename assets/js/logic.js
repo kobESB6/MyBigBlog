@@ -1,4 +1,3 @@
-const modeBtnEl = document.querySelector('#toggle');
 
 const applyMode = function (mode) {
   let icon, circleColor;
@@ -9,7 +8,10 @@ const applyMode = function (mode) {
     icon = '🌒';
     circleColor = '#8570a5';
   }
+  const modeBtnEl = document.querySelector('#toggle');
+  if (modeBtnEl) {
   modeBtnEl.textContent = icon;
+}
   document.body.classList = mode;
   document.documentElement.style.setProperty('--circle-color', circleColor);
 };
@@ -34,6 +36,10 @@ const readMode = function () {
 const saveMode = function (mode) {
   localStorage.setItem('mode', mode);
 };
-
-applyMode(readMode());
-modeBtnEl.addEventListener('click', handleModeToggle);
+document.addEventListener('DOMContentLoaded',function(){
+const modeBtnEl = document.querySelector('#toggle');
+if (modeBtnEl) {
+  applyMode(readMode());
+  modeBtnEl.addEventListener('click', handleModeToggle);
+}
+});
