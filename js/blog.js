@@ -12,15 +12,25 @@ const handleEmpty = function () {
   const a = buildElement('a', 'Enter your own submission here!', mainEl);
   a.href = './index.html';
 };
-
+const getBlogsFromLocalStorage = function() {
+  const blogsJSON = localStorage.getItem('blogs');
+  if (blogsJSON) {
+    try {
+      return JSON.parse(blogsJSON);
+    } catch (error) {
+      console.error('Error parsing blogs from localStorage:', error);
+      return [];
+    }
+  }
+  return []
+}
 const renderBlogList = function () {
-  const blogs = readLocalStorage();
+  const blogs = getBlogsFromLocalStorage();
   console.log('Retrieved blogs:', blogs); // Add this line
   if (!blogs.length) {
     handleEmpty();
     return;
   }
-  console.log('Rendering blogs'); // Add this line
   for (let blog of blogs) {
     const article = buildElement('article', null, mainEl);
     buildElement('h2', blog.title, article);
@@ -28,6 +38,6 @@ const renderBlogList = function () {
     buildElement('p', `Posted by: ${blog.username}`, article);
     article.classList.add('card');
   }
-;
-document.addEventListener('DOMContentLoaded', renderBlogList);
 };
+
+document.addEventListener('DOMContentLoaded', renderBlogList);
