@@ -1,4 +1,4 @@
-const formEl = document.querySelector('form');
+const formEl = document.querySelector('#blogForm');
 
 const handleFormSubmit = function (event) {
   event.preventDefault();
@@ -31,16 +31,6 @@ const handleFormSubmit = function (event) {
 const redirectPage = function () {
   location.href = './blog.html';
 };
-const readLocalStorage = function () {
-  const storedBlogs = localStorage.getItem('blogs');
-  return storedBlogs ? JSON.parse(storedBlogs) : [];
-};
 
-const storeLocalStorage = function (data) {
-  const allBlogs = readLocalStorage();
-  allBlogs.push(data);
-  const stringData = JSON.stringify(allBlogs);
-  localStorage.setItem('blogs', stringData);
-};
 
 formEl.addEventListener('submit', handleFormSubmit);

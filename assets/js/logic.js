@@ -28,7 +28,12 @@ const readLocalStorage = function () {
   const data = JSON.parse(stringData);
   return data || [];
 };
-
+const storeLocalStorage = function (data) {
+  const allBlogs = readLocalStorage();
+  allBlogs.push(data);
+  const stringData = JSON.stringify(allBlogs);
+  localStorage.setItem('blogs', stringData);
+};
 const readMode = function () {
   return localStorage.getItem('mode') || 'dark';
 };
